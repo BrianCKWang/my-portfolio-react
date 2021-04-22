@@ -1,11 +1,17 @@
 import React from 'react';
 
-function Heaser() {
+function Header() {
   return (
-    <header className="my-5">
-
+    <header>
+        <h1>Brian CK Wang</h1>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#work">Work</a>
+            <a href="./assets/docs/Resume.pdf">Resume</a>
+            <a href="#contact">Contact Me</a>   
+        </nav>
     </header>
   );
 }
 
-export default Heaser;
+export default Header;
