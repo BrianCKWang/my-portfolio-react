@@ -31,8 +31,22 @@ function ContactForm() {
 
   // JSX
   return (
+    <>
     <section>
       <h1 data-testid="testId-contact-h1">Contact me</h1>
+      <div>
+        <address>
+          <a href="mailto:brian.ck.wang@gmail.com">brian.ck.wang@gmail.com</a>
+            <a href="https://github.com/BrianCKWang/" target="_blank" rel="noreferrer">
+                <i className="fab fa-github"></i>
+                GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/chun-kai-brian-wang-292b6b48/" target="_blank" rel="noreferrer">
+                <i className="fab fa-linkedin"></i>
+                Linkedin
+            </a>
+        </address>
+      </div>
       <form id="contact-form" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
@@ -54,6 +68,7 @@ function ContactForm() {
         <button type="submit" data-testid="testId-contact-button">Submit</button>
       </form>
     </section>
+    </>
   )
 }
 

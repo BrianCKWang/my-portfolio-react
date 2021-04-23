@@ -1,15 +1,30 @@
 import React from 'react';
+import { capitalizeFirstLetter } from '../../utils/helpers';
 
-function Header() {
+function Header(props) {
+  const {
+    pages = [],
+    currentPage,
+    setCurrentPage
+  } = props;
+
   return (
     <header>
-        <h1>Brian CK Wang</h1>
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#work">Work</a>
-            <a href="./assets/docs/Resume.pdf">Resume</a>
-            <a href="#contact">Contact Me</a>   
-        </nav>
+      <h1>Brian CK Wang</h1>
+      <nav>
+
+          {pages.map((page) => (
+            <a
+              href="#About"
+              className={`mx-1 ${currentPage.name === page.name && 'navActive'}`}
+              key={page.name}
+            >
+              <span onClick={() => { setCurrentPage(page); }}>
+                {capitalizeFirstLetter(page.name)}
+              </span>
+            </a>
+          ))}
+      </nav>
     </header>
   );
 }
