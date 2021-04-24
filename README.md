@@ -2,7 +2,7 @@
 ## Description
 My professional portfolio for full stack developer.
 
-![main pic](https://github.com/BrianCKWang/my-portfolio-react/blob/main/public/img/main-01.png)
+![main pic](https://github.com/BrianCKWang/my-portfolio-react/blob/master/public/img/main-01.png)
 
 ## Table of Contents
 * [Installation](#installation)
@@ -22,7 +22,7 @@ My professional portfolio for full stack developer.
 
 ## Usage 
   
-  - Visit live website: [Portfolio](https://serene-hamlet-76290.herokuapp.com/)
+  - Visit live website: [Portfolio](https://brianckwang.github.io/my-portfolio-react/)
 
 ## Contribution Guidelines
 
