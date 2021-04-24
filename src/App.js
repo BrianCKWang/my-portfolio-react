@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import About from './components/About';
@@ -16,7 +16,9 @@ function App() {
     { name: 'Contact', JSX: (<Contact />) },
   ]);
   const [currentPage, setCurrentPage] = useState(pages[0]);
-
+  useEffect(() => {
+    document.title = "Brian's " + currentPage.name;
+  }, [currentPage]);
   return (
     <div className="App">
       <Header

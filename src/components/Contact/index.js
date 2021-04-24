@@ -8,16 +8,39 @@ function ContactForm() {
   
 
   function handleChange(e) {
-    if (e.target.name === 'email') {
-      const isValid = validateEmail(e.target.value);
-      console.log(isValid);
-      // isValid conditional statement
-      if ((e.target.value).trim() && !isValid) {
-        setErrorMessage('Your email is invalid.');
-      } else {
-        setErrorMessage('');
-      }
+    
+    switch(e.target.name){
+      case 'name':
+        if (!(e.target.value).trim()) {
+          setErrorMessage('Missing name.');
+        } else {
+          setErrorMessage('');
+        }
+      break;
+      case 'email':
+        const isValid = validateEmail(e.target.value);
+        if ((e.target.value).trim() && !isValid) {
+          setErrorMessage('Your email is invalid.');
+        } 
+        else if(!(e.target.value).trim()){
+          setErrorMessage('Missing email.');
+        }
+        else {
+          setErrorMessage('');
+        }
+      break;
+      case 'message':
+        if (!(e.target.value).trim()) {
+          setErrorMessage('Missing message.');
+        } else {
+          setErrorMessage('');
+        }
+      break;
+      default:
+        break;
     }
+
+
     if (!errorMessage) {
       setFormState({ ...formState, [e.target.name]: e.target.value });
     }
@@ -50,11 +73,11 @@ function ContactForm() {
           <label className="contact-flex-left" htmlFor="message">Message:</label>
           <textarea className="contact-flex-right" name="message" defaultValue={message} onBlur={handleChange} rows="5" />
         </div>
+        <div>
         {errorMessage && (
-          <div>
             <p className="error-text">{errorMessage}</p>
-          </div>
         )}
+        </div>
         <br></br>
         <button type="submit" data-testid="testId-contact-button">Submit</button>
       </form>
