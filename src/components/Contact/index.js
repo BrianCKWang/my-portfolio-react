@@ -12,7 +12,7 @@ function ContactForm() {
       const isValid = validateEmail(e.target.value);
       console.log(isValid);
       // isValid conditional statement
-      if (!isValid) {
+      if ((e.target.value).trim() && !isValid) {
         setErrorMessage('Your email is invalid.');
       } else {
         setErrorMessage('');
@@ -31,44 +31,34 @@ function ContactForm() {
 
   // JSX
   return (
-    <>
     <section>
+      <br></br>
       <h1 data-testid="testId-contact-h1">Contact me</h1>
-      <div>
-        <address>
-          <a href="mailto:brian.ck.wang@gmail.com">brian.ck.wang@gmail.com</a>
-            <a href="https://github.com/BrianCKWang/" target="_blank" rel="noreferrer">
-                <i className="fab fa-github"></i>
-                GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/chun-kai-brian-wang-292b6b48/" target="_blank" rel="noreferrer">
-                <i className="fab fa-linkedin"></i>
-                Linkedin
-            </a>
-        </address>
-      </div>
-      <form id="contact-form" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input type="text" defaultValue={name} onBlur={handleChange} name="name" />
+      <br></br>
+      <form className= "contact-form" id="contact-form" onSubmit={handleSubmit}>
+        <div className="contact-flex">
+          <label className="contact-flex-left" htmlFor="name">Name:</label>
+          <input className="contact-flex-right" type="text" defaultValue={name} onBlur={handleChange} name="name" />
         </div>
-        <div>
-          <label htmlFor="email">Email address:</label>
-          <input type="email" defaultValue={email} name="email" onBlur={handleChange} />
+        <br></br>
+        <div className="contact-flex">
+          <label className="contact-flex-left" htmlFor="email">Email address:</label>
+          <input className="contact-flex-right" type="email" defaultValue={email} name="email" onBlur={handleChange} />
         </div>
-        <div>
-          <label htmlFor="message">Message:</label>
-          <textarea name="message" defaultValue={message} onBlur={handleChange} rows="5" />
+        <br></br>
+        <div className="contact-flex">
+          <label className="contact-flex-left" htmlFor="message">Message:</label>
+          <textarea className="contact-flex-right" name="message" defaultValue={message} onBlur={handleChange} rows="5" />
         </div>
         {errorMessage && (
           <div>
             <p className="error-text">{errorMessage}</p>
           </div>
         )}
+        <br></br>
         <button type="submit" data-testid="testId-contact-button">Submit</button>
       </form>
     </section>
-    </>
   )
 }
 

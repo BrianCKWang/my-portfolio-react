@@ -41,14 +41,13 @@ function Projects() {
   ]
   return (
     <>
-      <section className="page-section" id="work">
+      <section className="page-section project-page" id="work">
         <div className="grid-container">
-
           {projectList.map((project, i) => {
             return (
               <a href={project.link} className={project.a_class} target="_blank" rel="noreferrer" key={'a' + i}>
                 <div>
-                  <h3>{project.name}</h3><span>{project.skillList}</span>
+                  <h3>{project.name}</h3><span>{project.skillList}</span> 
                 </div>
               </a>
             )

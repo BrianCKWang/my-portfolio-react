@@ -1,4 +1,5 @@
 import React from 'react';
+import Pdf from '../../assets/docs/Resume.pdf';
 
 function Resume() {
   const skillList = [
@@ -25,22 +26,28 @@ function Resume() {
   return (
     <>
     <section className="my-5">
-      <h1>Resume</h1>
-      <a href="./assets/docs/Resume.pdf">Resume</a>
-      <h2>My Skill Bag</h2>
-      <div className="skills-container">
-      {skillList.map((skill, i) => {
-          return (
-              <img 
-              
-              className={skill.class}
-              title={skill.name}
-              src={require(`../../assets/icons/${skill.icon}`).default} 
-              alt={skill.name}
-              key={i}
-              />
-          )
-        })}
+      <div className="skills-div">
+      <br></br>
+        <h2>My Skill Bag</h2>
+        <br></br>
+        <div className="skills-container">
+        {skillList.map((skill, i) => {
+            return (
+                <img 
+                className={skill.class}
+                title={skill.name}
+                src={require(`../../assets/icons/${skill.icon}`).default} 
+                alt={skill.name}
+                key={i}
+                />
+            )
+          })}
+        </div>
+      </div>
+      <br></br>
+      <div className="resume-div">
+        <h1>Download my resume</h1>
+        <a href={Pdf}>Click me!</a>
       </div>
     </section>
     </>

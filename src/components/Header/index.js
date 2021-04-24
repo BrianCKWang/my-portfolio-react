@@ -10,20 +10,20 @@ function Header(props) {
 
   return (
     <header>
-      <h1>Brian CK Wang</h1>
+      <h1>Brian Wang</h1>
       <nav>
-
+        <ul className="flex-row">
           {pages.map((page) => (
-            <a
-              href="#About"
+            <li
               className={`mx-1 ${currentPage.name === page.name && 'navActive'}`}
               key={page.name}
             >
               <span onClick={() => { setCurrentPage(page); }}>
                 {capitalizeFirstLetter(page.name)}
               </span>
-            </a>
+            </li>
           ))}
+          </ul>
       </nav>
     </header>
   );
